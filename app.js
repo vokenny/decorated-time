@@ -5,14 +5,25 @@
   let hexcode = '#ffffff';
 
   function updateHexCodeTime() {
-    const elem = document.getElementById('hex-code');
     const time = new Date().toISOString().substr(11, 8);
     hexcode = '#' + time.replaceAll(':', '');
-
-    elem.innerText = hexcode;
-    body.style.setProperty('--hexcode', hexcode);
   };
 
-  setInterval(updateHexCodeTime, 1000);
+  function displayHexcodeTime() {
+    const hexcodeContainer = document.getElementById('hex-code');
+
+    const digits = hexcode.split('');
+    const digitsHtml = digits
+      .map(i => `<p class="digit">${i}</p>`)
+      .reduce((prev, curr) => prev + curr);
+
+    hexcodeContainer.innerHTML = digitsHtml;
+    body.style.setProperty('--hexcode', hexcode);
+  }
+
+  setInterval(() => {
+    updateHexCodeTime();
+    displayHexcodeTime();
+  }, 1000);
 
 }());

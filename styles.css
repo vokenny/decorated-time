@@ -11,13 +11,21 @@ body {
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: var(--hexcode);
 }
 
+body,
+#content,
 #hex-code {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.digit {
+  display: grid;
+  justify-content: center;
+  width: 6vw;
   color: #ffffff;
   font-size: 10vw;
   -webkit-text-stroke-width: 1px;
