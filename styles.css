@@ -1,0 +1,25 @@
+* {
+  font-family: 'Teko', sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--hexcode);
+}
+
+#hex-code {
+  color: #ffffff;
+  font-size: 10vw;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
